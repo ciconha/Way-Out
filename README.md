@@ -25,9 +25,7 @@ Esse projeto foi desenvolvido para ter uma alternativa como digitador. Uma manei
 ## 🛠️ Tecnologias Utilizadas
 
 ### **Linguagens**
-- ✅ [Html]  
-- ✅ [CSS]  
-- ✅ [Java-Script]  
+
 
 ---
 
