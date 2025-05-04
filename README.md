@@ -46,17 +46,10 @@ npx expo start :
 
 
 ---
-<h3 align="left">Loading</h3>
-<p>
-  Nessa Tela Foi desenvolvida em Typesript e React
-</br>
-  hdhhdhdhdhdhdhdddhdhddhdhhdhdhdhdhdhdhdhhdhdhdhd
-</br>
-  dhhdhdhdhdhdhhdhdhhdhdhdhddhhhdhdhdhdhhdhdhdhddd
-</p>
 
-<div align="right">
-  <img src="https://github.com/user-attachments/assets/c0c864fd-c093-4f6a-a41a-1972315a21af" width="150", margintop="-100"/>
+
+<div align="right" style="display: ; margin-top: 800px;">
+  <img src="https://github.com/user-attachments/assets/c0c864fd-c093-4f6a-a41a-1972315a21af" width="250" margin-top="-80>
 </div>
 
 
