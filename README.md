@@ -1,50 +1,45 @@
-# Rich-Text ⛩️
 
-### 📓 Descrição
----
+<h1>Way Out ⛩️</h1>
 
-Esse projeto foi desenvolvido para ter uma alternativa como digitador. Uma maneira de personalizar o editor, ter uma eficiencia melhor, além de poder salvar toda a sua documentação.
+</br>
 
+```
+Python
 
-### 🔹 **Princípios de UI/UX Aplicados**
-- 🎯 **Experiência Intuitiva**: Interface simples e fácil de navegar.
-- 🎨 **Paleta de Cores**: Utilização de cores que melhoram a usabilidade.
+python.server.py :
 
-  
----
+- Ativar o servidor
 
-## 📌 Especificações Técnicas
+🚨 A porta 8000: ela ira dizer se Está funcionando ou não / Tem que ficar esperto Nisso.
 
-| Recurso       | Descrição |
-|--------------|----------|
-| **Frontend** | Interface criada com html e css  |
-| **Backend** | Para poder ter uma interação, poder adicionar imagens e salvar como arquivo no seu computador |
+- Para ver a API Funcionando Precisa entrar nesse link : http://192.168.0.113:8000/status
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+Séria interessante ativar o python data.py e o dijkstra.py também / para que possa funcionar o servidor
 
-### **Linguagens**
-
-
----
-
-### **Ferramentas**
-- ⚙️ **Git & GitHub**: Controle de versão e colaboração.
-
-  
----
-
-### **Desafios**
-- 🈵 **Usuábiliddae**: Um grande Desafio que tive foi a questão de usuábilidade. Porque foi muito mais além de Tecnico, poder ter uma intenção como personalizar a interface.
-- Poder imaginar como o usuário pode usar o sistema de maneira personalizada, foi um baita de um desafio. 
----
-
-## 🔴 Caso queira modificar fique avontade
-
-- Porém se possivel dar uma estrela agradeço muitoo!! 🌠
-- *caso queira modificar e repositar em seu GitHub fique a vontade, porém de se possivel mencionar minhas contribuições, ficaria muito feliz*
+```
 
 ---
 
-[link do repositório] [https://rich-text-liard.vercel.app/]
+```
+Expo
+
+npx expo start :
+
+-Esse é o comando para iniciar o Expo.
+
+🚨 Para que possa usar o comando do npx expo start : precisa colocar o cd wayout / para que possar encontrar a pasta.
+
+```
+
+---
+
+<h3> Ideia </h3>
+
+<p> Caso querira iniciar a API e o expo junto 
+</br>
+-Recomedo peguar o caminho de cada pasta e colocar no terminal para que possa se organizar / Recomendo utilizar as aspas / Assim cd "nome do caminho da pasta"
+</p>
+
+
