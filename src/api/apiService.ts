@@ -1,4 +1,4 @@
-const baseURL = "http://192.168.0.103:8000/status";
+const baseURL = "http://192.168.0.113:8000/status";
 
 export const fetchSafePath = async () => {
     try {
