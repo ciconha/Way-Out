@@ -1,0 +1,26 @@
+import heapq
+
+
+def dijkstra(graph, origem, destino):
+
+    distancias = {nó: float("inf") for nó in graph}
+    distancias[origem] = 0
+
+    fila_prioridade = [(0, origem)]
+    caminhos = {origem: [origem]}
+
+    while fila_prioridade:
+        distancia_atual, nó_atual = heapq.heappop(fila_prioridade)
+
+        if nó_atual == destino:
+            return caminhos[nó_atual]
+
+        for vizinho, peso in graph[nó_atual].items():
+            nova_distancia = distancia_atual + peso
+
+            if nova_distancia < distancias[vizinho]:
+                distancias[vizinho] = nova_distancia
+                heapq.heappush(fila_prioridade, (nova_distancia, vizinho))
+                caminhos[vizinho] = caminhos[nó_atual] + [vizinho]
+
+    return ["Nenhum caminho disponível"]

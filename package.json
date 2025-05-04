@@ -1,5 +1,5 @@
 {
-  "name": "way-out",
+  "name": "wayout",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -9,22 +9,17 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@react-navigation/native": "^7.1.6",
-    "@react-navigation/stack": "^7.2.10",
-    "expo": "~52.0.46",
-    "expo-status-bar": "~2.0.1",
-    "react": "18.3.1",
-    "react-native": "0.76.9",
-    "react-native-gesture-handler": "^2.25.0",
-    "react-native-reanimated": "^3.17.5",
-    "react-native-safe-area-context": "^5.4.0",
-    "react-native-screens": "^4.10.0",
-    "react-native-vector-icons": "^10.2.0"
+    "@react-navigation/native": "^7.1.7",
+    "@react-navigation/stack": "^7.3.0",
+    "expo": "~53.0.5",
+    "expo-status-bar": "~2.2.3",
+    "react": "19.0.0",
+    "react-native": "0.79.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@types/react": "~18.3.12",
-    "typescript": "^5.3.3"
+    "@types/react": "~19.0.10",
+    "typescript": "~5.8.3"
   },
   "private": true
 }
