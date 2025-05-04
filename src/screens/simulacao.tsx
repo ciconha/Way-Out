@@ -15,7 +15,7 @@ const Simulacao = () => {
   const buscarDados = async () => {
     try {
       console.log("🔄 Buscando dados do backend...");
-      const response = await fetch("http://192.168.0.103:8000/status");
+      const response = await fetch("http://192.168.0.113:8000/status");
       const data = await response.json();
       console.log("📡 Dados recebidos:", data);
       setStatus(data);
