@@ -42,8 +42,21 @@ npx expo start :
 -Recomedo peguar o caminho de cada pasta e colocar no terminal para que possa se organizar / Recomendo utilizar as aspas / Assim cd "nome do caminho da pasta"
 </p>
 
-<div aling="center">
-  <img src="https://github.com/user-attachments/assets/c0c864fd-c093-4f6a-a41a-1972315a21af" width="150" />
+</br>
+
+
+---
+<h3 align="left">Loading</h3>
+<p>
+  Nessa Tela Foi desenvolvida em Typesript e React
+</br>
+  hdhhdhdhdhdhdhdddhdhddhdhhdhdhdhdhdhdhdhhdhdhdhd
+</br>
+  dhhdhdhdhdhdhhdhdhhdhdhdhddhhhdhdhdhdhhdhdhdhddd
+</p>
+
+<div align="right">
+  <img src="https://github.com/user-attachments/assets/c0c864fd-c093-4f6a-a41a-1972315a21af" width="150", margintop="-100"/>
 </div>
 
 
