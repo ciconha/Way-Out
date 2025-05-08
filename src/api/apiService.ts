@@ -1,4 +1,4 @@
-const baseURL = "http://192.168.0.113:8000/status";
+const baseURL = "http://127.0.0.1:8000/status"; 
 
 export const fetchSafePath = async () => {
     try {
@@ -15,7 +15,7 @@ export const fetchSafePath = async () => {
 
         return data;
     } catch (error) {
-        console.error("❌ Erro ao buscar dados no frontend:", error);
+        console.error("Puts deu Erro em:", error);
         return { caminho_seguro: [], locais_em_chamas: [], locais_seguros: [], erro: "Erro na requisição" };
     }
 };

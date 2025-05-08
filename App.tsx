@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './style';
 import Inicio from './src/screens/inicio';
+import { Image } from 'expo-image';
 
 
 const App = () => {

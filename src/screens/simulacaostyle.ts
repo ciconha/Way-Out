@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 29,
+    marginTop:19,
   },
   warning: {
     fontSize: 18,
@@ -74,6 +75,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
   },
+  scrollContainer: {
+    flexGrow: 1,
+    padding: 20,
+    backgroundColor: "#49b398",
+  },
 });
+
 
 export default styles;
