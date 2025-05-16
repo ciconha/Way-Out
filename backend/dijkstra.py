@@ -15,7 +15,7 @@ def dijkstra(graph, origem, destino, locais_em_chamas):
         distancia_atual, nó_atual = heapq.heappop(fila_prioridade)
 
         if nó_atual == destino and len(caminhos[nó_atual]) >= 8:
-            # ✅ Agora só finaliza se houver pelo menos 6 locais!
+        
             return caminhos[nó_atual]
 
         for vizinho, peso in graph[nó_atual].items():

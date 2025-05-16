@@ -10,7 +10,7 @@ PORT = 8000
 
 def normalizar_nome(nome):
     nome = unquote_plus(nome).strip().title()
-    return unicodedata.normalize("NFC", nome)  # 🔄 Apenas normaliza, sem modificar nomes digitados!
+    return unicodedata.normalize("NFC", nome)  
 
 class MeuServidor(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
