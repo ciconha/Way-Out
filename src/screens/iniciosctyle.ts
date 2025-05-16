@@ -5,12 +5,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-        backgroundColor: '#e08db4',
+        backgroundColor: '#613e3e',
     },
     h1: {
         fontSize: 28,
         fontWeight: 'bold',
-        color: '#333',
+        color: '#fcfcfc',
         marginBottom: 20,
         textAlign: 'center',
         position: "relative",
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         right: 127,
         borderRadius: 10,
         overflow: 'hidden',
-        color: '#b0a482'
+        color: '#fcfcfc'
     },
 });
 

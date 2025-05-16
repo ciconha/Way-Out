@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import react from "react";
 import { View, Text, Button } from "react-native";
 import styles from "./iniciosctyle";
 import Simulacao from "./simulacao";
-import Mapa from "./mapa"; 
+import Mapa from "./mapa";
+import React, { useState } from "react";
 
-const Inicio = () => {
+interface InicioProps {
+  voltar?: () => void; 
+}
+
+const Inicio: React.FC<InicioProps> = ({ voltar }) => {
   const [mostrarSimulacao, setMostrarSimulacao] = useState(false);
   const [mostrarMapa, setMostrarMapa] = useState(false);
 
@@ -13,7 +18,7 @@ const Inicio = () => {
   }
 
   if (mostrarMapa) {
-    return <Mapa />; 
+    return <Mapa />;
   }
 
   return (

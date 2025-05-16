@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import styles from "./simulacaostyle";
+import Resultado from "./Resultado";
 import Inicio from "./inicio";
+
+const API_URL = "http://10.128.131.223:8000"; 
 
 const Simulacao = () => {
   const [status, setStatus] = useState({
@@ -9,17 +12,27 @@ const Simulacao = () => {
     locais_seguros: [],
   });
 
+  const [origem, setOrigem] = useState("");
+  const [destino, setDestino] = useState("");
+  const [mostrarResultado, setMostrarResultado] = useState(false);
   const [showInicio, setShowInicio] = useState(false);
 
   const buscarDados = async () => {
     try {
-      console.log("🔄 Buscando dados do backend...");
-      const response = await fetch("http://192.168.0.102:8000/status");
+      const response = await fetch(`${API_URL}/status`);
       const data = await response.json();
-      console.log("📡 Dados recebidos:", data);
-      setStatus(data);
+
+      setStatus({
+        locais_em_chamas: data.locais_em_chamas,
+        locais_seguros: data.locais_seguros.filter((local: string) => !data.locais_em_chamas.includes(local)),
+      });
+
+      if (mostrarResultado) {
+        setMostrarResultado(false);
+        setTimeout(() => setMostrarResultado(true), 100);
+      }
     } catch (error) {
-      console.error("Puts deu Erro em Familía ", error);
+      console.error(" Erro ao buscar dados da API:", error);
     }
   };
 
@@ -28,7 +41,19 @@ const Simulacao = () => {
   }, []);
 
   if (showInicio) {
-    return <Inicio />;
+    return <Inicio voltar={() => setShowInicio(false)} />;
+  }
+
+  if (mostrarResultado) {
+    return (
+      <Resultado
+        origem={origem.trim()} 
+        destino={destino.trim()}
+        locaisSeguros={status.locais_seguros}
+        locaisEmChamas={status.locais_em_chamas}
+        voltar={() => setMostrarResultado(false)}
+      />
+    );
   }
 
   return (
@@ -36,26 +61,42 @@ const Simulacao = () => {
       <Text style={styles.h1}>WayOut</Text>
 
       <Text style={styles.warning}>🔥 Locais em Chamas:</Text>
-      {status.locais_em_chamas.length > 0 ? (
-        status.locais_em_chamas.map((local) => <Text key={local} style={styles.alert}>{local}</Text>)
-      ) : (
-        <Text style={styles.safe}>Nenhum local em chamas!</Text>
-      )}
-
-      <Text style={styles.info}>🛡️ Locais Seguros:</Text>
-      {status.locais_seguros.map((local) => (
-        <Text key={local} style={styles.safe}>{local}</Text>
+      {status.locais_em_chamas.map((local: string, index: number) => (
+        <Text key={index} style={styles.alert}>{local}</Text>
       ))}
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => buscarDados()}>
-          <Text style={styles.buttonText}>🔄 Atualizar Dados</Text>
-        </TouchableOpacity>
+      <Text style={styles.info}>🛡️ Locais Seguros:</Text>
+      {status.locais_seguros.map((local: string, index: number) => (
+        <Text key={index} style={styles.safe}>{local}</Text>
+      ))}
 
-        <TouchableOpacity style={styles.button} onPress={() => setShowInicio(true)}>
-          <Text style={styles.buttonText}>↩️ Voltar para Início</Text>
-        </TouchableOpacity>
-      </View>
+      <Text style={styles.inputLabel}>👕 Partida:</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Digite o local de partida"
+        value={origem}
+        onChangeText={(text) => setOrigem(text)}
+      />
+
+      <Text style={styles.inputLabel}>🏁 Destino:</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Digite o destino"
+        value={destino}
+        onChangeText={(text) => setDestino(text)}
+      />
+
+      <TouchableOpacity style={styles.button1} onPress={() => setMostrarResultado(true)}>
+        <Text style={styles.buttonText1}>🚀 Iniciar</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button2} onPress={buscarDados}>
+        <Text style={styles.buttonText2}>🔄 Atualizar Dados</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button3} onPress={() => setShowInicio(true)}>
+        <Text style={styles.buttonText3}>🏠 Voltar para Início</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
