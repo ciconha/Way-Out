@@ -18,7 +18,7 @@ const Mapa = () => {
 
 
       <TouchableOpacity style={styles.button} onPress={() => setMostrarInicio(true)}>
-          <Text style={styles.buttonText}>↩️ Voltar para Início</Text>
+          <Text style={styles.buttonText}>Voltar para Início</Text>
       </TouchableOpacity>
     </View>
   );
