@@ -52,15 +52,15 @@ npx expo start :
 ---
 
 
-
-<h3>Tela de Início</h3>
-
-<div style="display: inline-block; width: 58%; vertical-align: top;">
-  <p><strong>Função:</strong></p>
-  <p>A tela de início apresenta o nome do projeto e opções básicas para iniciar a navegação. Pode conter botões como "Entrar", "Simular", ou "Ver tutorial".</p>
-</div>
-<div style="display: inline-block; width: 40%;">
-  <img src="https://private-user-images.githubusercontent.com/131923066/440155741-c0c864fd-c093-4f6a-a41a-1972315a21af.jpg" width="100%"/>
-</div>
+<table>
+  <tr>
+    <td style="width: 60%; vertical-align: top;">
+      <p>A tela de início apresenta o nome do projeto e opções básicas para iniciar a navegação. Pode conter botões como "Entrar", "Simular", ou "Ver tutorial".</p>
+    </td>
+    <td style="width: 40%;">
+      <img src="https://private-user-images.githubusercontent.com/131923066/440155741-c0c864fd-c093-4f6a-a41a-1972315a21af.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDc3NzMzNzksIm5iZiI6MTc0Nzc3MzA3OSwicGF0aCI6Ii8xMzE5MjMwNjYvNDQwMTU1NzQxLWMwYzg2NGZkLWMwOTMtNGY2YS1hNDFhLTE5NzIzMTVhMjFhZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyMFQyMDMxMTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xMTUwN2M3NTUyMjFjOThjZTNmZTAzNjczZGNjMDNjM2RlMTM0OTg0MTRkMjk3NDk3YjBmMWNlZmQxZTRlNGQ3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.reSXZ-6oz_P0PM-Xpq_SzNzuzFZ-qKVwTKO7hQDhtw0" alt="Tela de Início" width="69%">
+    </td>
+  </tr>
+</table>
 
 
