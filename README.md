@@ -49,6 +49,6 @@ npx expo start :
 
 
 <div style = "dysplay : inline_block" >
-<img   aling = "center"  alt = "ciconha" width = "980px"  heigth= "700px" src ="https://github.com/user-attachments/assets/9133d686-35ee-496f-bb05-5f13af7e1d4a">  
+<img   aling = "left"  alt = "ciconha" width = "150px"  heigth= "100px" src ="https://private-user-images.githubusercontent.com/131923066/440155741-c0c864fd-c093-4f6a-a41a-1972315a21af.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDc3NzI0NDAsIm5iZiI6MTc0Nzc3MjE0MCwicGF0aCI6Ii8xMzE5MjMwNjYvNDQwMTU1NzQxLWMwYzg2NGZkLWMwOTMtNGY2YS1hNDFhLTE5NzIzMTVhMjFhZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTIwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyMFQyMDE1NDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lYzg2NWFmYmZiM2FiMTBhOGY0OTMzYTg2MzE1N2Q3N2E5MjQ0NTQ1MmE5Nzk0YWY0ZmI3YTUyNjllZDU3MjZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.XNuXgokviDjT2PSG6HdBJF4UQR0e4cUj9vKR-ik7bYw">  
 </div>
 
