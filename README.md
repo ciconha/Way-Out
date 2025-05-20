@@ -48,8 +48,7 @@ npx expo start :
 ---
 
 
-<div align="right" style="display: ; margin-top: 800px;">
-  <img src="https://github.com/user-attachments/assets/c0c864fd-c093-4f6a-a41a-1972315a21af" width="250" margin-top="-80>
+<div style = "dysplay : inline_block" >
+<img   aling = "center"  alt = "ciconha" width = "980px"  heigth= "700px" src ="https://github.com/user-attachments/assets/9133d686-35ee-496f-bb05-5f13af7e1d4a">  
 </div>
-
 
