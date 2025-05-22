@@ -122,7 +122,7 @@ npx expo start :
       <p>A tela do Mapa onde Todos os Locais do Shopping</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://private-user-images.githubusercontent.com/131923066/446317070-fa72a5f3-bffa-4dbc-91d2-163ddc7694a1.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDc4NzM4MjgsIm5iZiI6MTc0Nzg3MzUyOCwicGF0aCI6Ii8xMzE5MjMwNjYvNDQ2MzE3MDcwLWZhNzJhNWYzLWJmZmEtNGRiYy05MWQyLTE2M2RkYzc2OTRhMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyMlQwMDI1MjhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NmZiOGFiMDA5NDQ1N2I5Y2I5NWZjYTEzNWRiZDEyNjExYjA4MTJhMTY1N2Y1MTFhYzU4ZWYzMWE0N2E2NWZkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.-Qs6l0jP91q1bXKjxGBDYAMlpICrkVoDbe_LUUnRU2M" alt="Tela de Início" width="30%" >
+      <img src="https://github.com/user-attachments/assets/1456971d-c9dd-42fd-9f09-6a5eb1108f02" alt="Tela de Início" width="30%" >
     </td>
   </tr>
 </table>
