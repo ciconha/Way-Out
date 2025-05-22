@@ -138,10 +138,10 @@ npx expo start :
 <table>
   <tr>
     <td style="width: 10%; vertical-align: top;">
-      <p>A tela do Mapa onde Todos os Locais do Shopping</p>
+      <p>A tela do Resultado</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/e0a74198-4dd2-4790-9cf7-132931fe39c3" alt="Tela de Início" width="30%" >
+      <img src="https://github.com/user-attachments/assets/7ba74a9e-92df-4509-8d7a-cc06831ab52e" width="30%" >
     </td>
          <td style="width: 10%; vertical-align: top;">
       <p>A tela do Mapa onde Todos os Locais do Shopping</p>
