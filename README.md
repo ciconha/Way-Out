@@ -116,7 +116,7 @@ npx expo start :
       <p>Os locais que são gerados automaticamente sendo eles, locais de perigo e seguro</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/e0a74198-4dd2-4790-9cf7-132931fe39c3" alt="Tela de Início" width="60%" >
+      <img src="https://github.com/user-attachments/assets/e0a74198-4dd2-4790-9cf7-132931fe39c3" alt="Tela de Início" width="70%" >
     </td>
      <td style="width: 10%; vertical-align: top;">
       <p>Mais para baixo tem 2 inputs, onde o usuário irá análisar o local de partida e chegada.</p>
@@ -124,7 +124,7 @@ npx expo start :
      <p> 2 - O local de chegada é onde o usuário pretende chegar.</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/1456971d-c9dd-42fd-9f09-6a5eb1108f02" alt="Tela de Início" width="60%" >
+      <img src="https://github.com/user-attachments/assets/1456971d-c9dd-42fd-9f09-6a5eb1108f02" alt="Tela de Início" width="70%" >
     </td>
   </tr>
 </table>
@@ -143,13 +143,13 @@ npx expo start :
       <p>O resultado que aparece para o usuario quando Digita no input o local de partida e de chegada</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/7ba74a9e-92df-4509-8d7a-cc06831ab52e" width="60%" >
+      <img src="https://github.com/user-attachments/assets/7ba74a9e-92df-4509-8d7a-cc06831ab52e" width="70%" >
     </td>
          <td style="width: 10%; vertical-align: top;">
       <p>Caso o usuário Digite um local que esteja em Perigo o sistema ira Redirecionar um outro local seguro e proximo aquele que o usuário escolheu</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/9dc270df-c537-4e6a-a38f-f57885dd21b7" alt="Tela de Início" width="60%" >
+      <img src="https://github.com/user-attachments/assets/9dc270df-c537-4e6a-a38f-f57885dd21b7" alt="Tela de Início" width="70%" >
     </td>
   </tr>
 </table>
