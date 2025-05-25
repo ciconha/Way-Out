@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import styles from "./simulacaostyle";
+import Simulacao from "./simulacao";
 
 interface ResultadoProps {
   origem: string;
@@ -10,17 +11,18 @@ interface ResultadoProps {
   voltar: () => void;
 }
 
-const API_URL = "http://10.128.131.223:8000"; 
+const API_URL = "http://192.168.0.105:8000"; 
 
 const Resultado: React.FC<ResultadoProps> = ({ origem, destino, locaisSeguros, locaisEmChamas, voltar }) => {
   const [caminho, setCaminho] = useState<string[]>([]);
   const [erroAPI, setErroAPI] = useState<string | null>(null);
+  const [ajusteRota, setAjusteRota] = useState<boolean>(false);
 
   const calcularCaminho = async () => {
     try {
       if (!origem || !destino) {
-        setErroAPI("❌ Origem ou destino inválidos!");
-        console.error("❌ Origem ou destino inválidos!");
+        setErroAPI(" Origem ou destino inválidos!");
+        console.error(" Origem ou destino inválidos!");
         return;
       }
 
@@ -31,20 +33,19 @@ const Resultado: React.FC<ResultadoProps> = ({ origem, destino, locaisSeguros, l
       const response = await fetch(url);
       const data = await response.json();
 
-      console.log("🔥 Resposta completa da API:", JSON.stringify(data, null, 2)); // ✅ Exibe toda a resposta da API no console
+      console.log(" Resposta completa da API:", JSON.stringify(data, null, 2));
 
       if (data.erro) {
-        setErroAPI(` Erro do recebido: ${data.erro}`);
+        setErroAPI(` Erro recebido: ${data.erro}`);
         console.error(" Erro recebido:", data.erro);
       } else {
-        console.log("✅ Caminho seguro encontrado:", data.caminho_seguro);
+        console.log(" Caminho seguro encontrado:", data.caminho_seguro);
 
-      
         let locaisSelecionados = data.caminho_seguro.filter((local: string) => 
           locaisSeguros.includes(local) && local !== "" && !local.includes("Nenhum caminho disponível")
         );
 
-        while (locaisSelecionados.length < 4) {
+        while (locaisSelecionados.length < 2) {
           const localExtra = locaisSeguros.find((local) => !locaisSelecionados.includes(local));
           if (localExtra) {
             locaisSelecionados.push(localExtra);
@@ -53,13 +54,23 @@ const Resultado: React.FC<ResultadoProps> = ({ origem, destino, locaisSeguros, l
           }
         }
 
-        const caminhoCompleto: string[] = [origem, ...locaisSelecionados, destino];
+        let caminhoCompleto: string[] = [origem, ...locaisSelecionados, destino];
+
+        // 🚀 Ajustando locais bloqueados no caminho
+        caminhoCompleto = caminhoCompleto.map(local => {
+          if (locaisEmChamas.includes(local)) {
+            setAjusteRota(true); 
+            return locaisSeguros.find(seguro => !locaisEmChamas.includes(seguro)) || local;
+          }
+          return local;
+        });
+
         setCaminho(caminhoCompleto);
         setErroAPI(null);
       }
     } catch (error) {
-      setErroAPI(" Erro ao conectar à API");
-      console.error(" Erro ao acessar API:", error);
+      setErroAPI("❌ Erro ao conectar à API");
+      console.error("❌ Erro ao acessar API:", error);
     }
   };
 
@@ -75,6 +86,12 @@ const Resultado: React.FC<ResultadoProps> = ({ origem, destino, locaisSeguros, l
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <Text style={styles.h1}>WayOut</Text>
 
+      {ajusteRota && (
+        <Text style={styles.warning}>
+          ⚠️ Alguns locais estavam bloqueados e foram substituídos por locais seguros!
+        </Text>
+      )}
+
       {erroAPI ? (
         <Text style={styles.alert}>{erroAPI}</Text>
       ) : (
@@ -88,8 +105,10 @@ const Resultado: React.FC<ResultadoProps> = ({ origem, destino, locaisSeguros, l
       )}
 
       <TouchableOpacity style={styles.button} onPress={voltar}>
-        <Text style={styles.buttonText}>🏠 Voltar para Simulação</Text>
+        <Text style={styles.buttonText}> Voltar para Simulação</Text>
       </TouchableOpacity>
+
+      <Image source={require("../assets/Mapa.jpeg")} style={styles.mapa} />
     </ScrollView>
   );
 };

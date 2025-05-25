@@ -4,6 +4,7 @@ import styles from "./iniciosctyle";
 import Simulacao from "./simulacao";
 import Mapa from "./mapa";
 import React, { useState } from "react";
+import { Image } from 'expo-image';
 
 interface InicioProps {
   voltar?: () => void; 
@@ -25,12 +26,16 @@ const Inicio: React.FC<InicioProps> = ({ voltar }) => {
     <View style={styles.container}>
       <Text style={styles.h1}>Bem-vindo ao WayOut!</Text>
 
+ 
+     <Image source={require("../assets/Logo WayOut1.png")} style={styles.logo} />  
+ 
+
       <View style={styles.buttonSimulacao}>
-        <Button title="Fazer Simulação" onPress={() => setMostrarSimulacao(true)} color="#b0a482" />
+        <Button title="Fazer Simulação" onPress={() => setMostrarSimulacao(true)} color="#000000" />
       </View>
 
       <View style={styles.buttonMapa}>
-        <Button title="Mapa" onPress={() => setMostrarMapa(true)} color="#b0a482" />
+        <Button title="Mapa" onPress={() => setMostrarMapa(true)} color="#000000" />
       </View>
     </View>
   );

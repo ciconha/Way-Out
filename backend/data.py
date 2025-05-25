@@ -2,7 +2,7 @@ import random
 import json
 
 locais = [
-    "Praça de Alimentação", "Entrada Principal", "Saída Lateral", "Gucci",
+    "Praça De Alimentação", "Entrada Principal", "Saída Lateral", "Gucci",
     "Davó", "Americanas", "Cinemark", "Óticas Carol", "Like Tatto",
     "Samsung", "Le Postiche", "Riachuelo", "Calvin Klein", "Arezzo",
     "Centauro", "Polo Wear",]
@@ -18,10 +18,10 @@ def locais_seguro(chamas):
 def gerar_grafo():
     graph = {local: {} for local in locais}
     for i in range(len(locais)):
-        vizinhos = random.sample(locais, k=random.randint(6, 10))  
+        vizinhos = random.sample(locais, k=random.randint(1, 16))  
         for vizinho in vizinhos:
             if vizinho != locais[i]:
-                peso = random.randint(1, 10)
+                peso = random.randint(1, 1)
                 graph[locais[i]][vizinho] = peso
                 graph[vizinho][locais[i]] = peso  
     return graph

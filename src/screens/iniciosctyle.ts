@@ -5,38 +5,45 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-        backgroundColor: '#613e3e',
+        backgroundColor: '#c3d6d6',
     },
     h1: {
         fontSize: 28,
         fontWeight: 'bold',
-        color: '#fcfcfc',
+        color: '#000000',
         marginBottom: 20,
         textAlign: 'center',
-        position: "relative",
-        marginTop: -200,
+        position: "absolute",
+        marginTop: -600,
     },
     buttonSimulacao: {
         marginVertical: 10, 
-        width: '50%',
+        width: '55%',
         alignSelf: 'center',
         position: "relative",
-        marginTop: 160,
-        right: 90,
-        borderRadius: 10,
+        marginTop: 500,
+        right: 0,
+        borderRadius: 50,
         overflow: 'hidden',
 
     },
     buttonMapa: {
         marginVertical: 10, 
-        width: '30%',
+        width: '55%',
         alignSelf: 'center',
         position: "relative",
-        marginTop: 140,
-        right: 127,
-        borderRadius: 10,
+        marginTop: 30,
+        right: 0,
+        borderRadius: 50,
         overflow: 'hidden',
         color: '#fcfcfc'
+    },
+    logo:{
+    width:490,
+    height:290,
+    position:"absolute",
+    marginBottom:60
+
     },
 });
 

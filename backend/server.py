@@ -55,13 +55,22 @@ class MeuServidor(http.server.SimpleHTTPRequestHandler):
 
                 print("🔥 Locais em chamas:", locais_em_chamas)
 
+          
                 if origem in locais_em_chamas or destino in locais_em_chamas:
-                    if locais_seguros:
-                        destino = locais_seguros[0] if destino in locais_em_chamas else destino
-                        origem = locais_seguros[1] if origem in locais_em_chamas else origem
-                        print(f"⚠️ Origem/Destino bloqueado! Ajustando para: {origem} ➡️ {destino}")
-                    else:
+                    locais_seguros_disponiveis = [local for local in locais if local not in locais_em_chamas]
+
+                    if not locais_seguros_disponiveis:
                         raise ValueError("Erro: Todos os destinos possíveis estão bloqueados!")
+
+               
+                    if origem in locais_em_chamas:
+                        origem = min(locais_seguros_disponiveis, key=lambda local: graph.get(local, {}).get(destino, float("inf")))
+                        print(f"⚠️ Origem em chamas! Ajustado para: {origem}")
+
+                
+                    if destino in locais_em_chamas:
+                        destino = min(locais_seguros_disponiveis, key=lambda local: graph.get(origem, {}).get(local, float("inf")))
+                        print(f"⚠️ Destino em chamas! Ajustado para: {destino}")
 
                 grafo_seguro = {local: conexoes for local, conexoes in graph.items() if local not in locais_em_chamas}
                 for local in grafo_seguro:

@@ -5,7 +5,7 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#121212", 
+    backgroundColor: "#06c9c9", 
     padding: 20,
   },
   mapa: {
@@ -17,7 +17,7 @@ export default StyleSheet.create({
   button: {
     marginTop: 20,
     padding: 12,
-    backgroundColor: "#b0a482",
+    backgroundColor: "#000000",
     borderRadius: 8,
     alignItems: "center",
   },

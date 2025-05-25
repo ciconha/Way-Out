@@ -13,14 +13,14 @@ const App = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 100) {
+        if (prev >= 110) {
           clearInterval(interval);
           setShowButton(true);
           return prev;
         }
-        return prev + 10;
+        return prev + 19;
       });
-    }, 300);
+    }, 400);
   }, []);
 
   if (showInicio) {

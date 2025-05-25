@@ -4,7 +4,7 @@ import styles from "./simulacaostyle";
 import Resultado from "./Resultado";
 import Inicio from "./inicio";
 
-const API_URL = "http://10.128.131.223:8000"; 
+const API_URL = "http://192.168.0.105:8000"; 
 
 const Simulacao = () => {
   const [status, setStatus] = useState({
@@ -60,17 +60,17 @@ const Simulacao = () => {
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <Text style={styles.h1}>WayOut</Text>
 
-      <Text style={styles.warning}>🔥 Locais em Chamas:</Text>
+      <Text style={styles.warning}> Locais em Chamas:</Text>
       {status.locais_em_chamas.map((local: string, index: number) => (
         <Text key={index} style={styles.alert}>{local}</Text>
       ))}
 
-      <Text style={styles.info}>🛡️ Locais Seguros:</Text>
+      <Text style={styles.info}> Locais Seguros:</Text>
       {status.locais_seguros.map((local: string, index: number) => (
         <Text key={index} style={styles.safe}>{local}</Text>
       ))}
 
-      <Text style={styles.inputLabel}>👕 Partida:</Text>
+      <Text style={styles.inputLabel}> Partida:</Text>
       <TextInput
         style={styles.input}
         placeholder="Digite o local de partida"
@@ -78,7 +78,7 @@ const Simulacao = () => {
         onChangeText={(text) => setOrigem(text)}
       />
 
-      <Text style={styles.inputLabel}>🏁 Destino:</Text>
+      <Text style={styles.inputLabel}> Destino:</Text>
       <TextInput
         style={styles.input}
         placeholder="Digite o destino"
@@ -87,15 +87,15 @@ const Simulacao = () => {
       />
 
       <TouchableOpacity style={styles.button1} onPress={() => setMostrarResultado(true)}>
-        <Text style={styles.buttonText1}>🚀 Iniciar</Text>
+        <Text style={styles.buttonText1}> Iniciar</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button2} onPress={buscarDados}>
-        <Text style={styles.buttonText2}>🔄 Atualizar Dados</Text>
+        <Text style={styles.buttonText2}> Atualizar Dados</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button3} onPress={() => setShowInicio(true)}>
-        <Text style={styles.buttonText3}>🏠 Voltar para Início</Text>
+        <Text style={styles.buttonText3}> Voltar para Início</Text>
       </TouchableOpacity>
     </ScrollView>
   );
