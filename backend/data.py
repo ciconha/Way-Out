@@ -5,8 +5,8 @@ locais = [
     "Praça De Alimentação", "Entrada Principal", "Saída Lateral", "Gucci",
     "Davó", "Americanas", "Cinemark", "Óticas Carol", "Like Tatto",
     "Samsung", "Le Postiche", "Riachuelo", "Calvin Klein", "Arezzo",
-    "Centauro", "Polo Wear",]
-
+    "Centauro", "Polo Wear",
+]
 
 def gerar_chamas():
     quantidade = max(1, min(len(locais)//3, len(locais)))  
@@ -18,10 +18,10 @@ def locais_seguro(chamas):
 def gerar_grafo():
     graph = {local: {} for local in locais}
     for i in range(len(locais)):
-        vizinhos = random.sample(locais, k=random.randint(1, 16))  
+        vizinhos = random.sample(locais, k=random.randint(1, len(locais)//2))  
         for vizinho in vizinhos:
             if vizinho != locais[i]:
-                peso = random.randint(1, 1)
+                peso = random.randint(1, 11) if vizinho not in gerar_chamas() else random.randint(20, 60)  
                 graph[locais[i]][vizinho] = peso
                 graph[vizinho][locais[i]] = peso  
     return graph
