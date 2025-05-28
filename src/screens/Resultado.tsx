@@ -21,8 +21,8 @@ const Resultado: React.FC<ResultadoProps> = ({ origem, destino, locaisSeguros, l
   const calcularCaminho = async () => {
     try {
       if (!origem || !destino) {
-        setErroAPI(" Origem ou destino inválidos!");
-        console.error(" Origem ou destino inválidos!");
+        setErroAPI("❌ Origem ou destino inválidos!");
+        console.error("❌ Origem ou destino inválidos!");
         return;
       }
 
@@ -36,17 +36,26 @@ const Resultado: React.FC<ResultadoProps> = ({ origem, destino, locaisSeguros, l
       console.log(" Resposta completa da API:", JSON.stringify(data, null, 2));
 
       if (data.erro) {
-        setErroAPI(` Erro recebido: ${data.erro}`);
-        console.error(" Erro recebido:", data.erro);
+        setErroAPI(`❌ Erro recebido: ${data.erro}`);
+        console.error("❌ Erro recebido:", data.erro);
       } else {
         console.log(" Caminho seguro encontrado:", data.caminho_seguro);
 
-        let locaisSelecionados = data.caminho_seguro.filter((local: string) => 
-          locaisSeguros.includes(local) && local !== "" && !local.includes("Nenhum caminho disponível")
-        );
+ 
+        const caminhoSeguro: string[] = Array.isArray(data.caminho_seguro)
+          ? data.caminho_seguro.map(String) 
+          : [];
 
-        while (locaisSelecionados.length < 2) {
-          const localExtra = locaisSeguros.find((local) => !locaisSelecionados.includes(local));
+
+        let locaisSelecionados = [...new Set(caminhoSeguro)]
+          .filter((local: string) => locaisSeguros.includes(local) && local !== origem && local !== destino)
+          .slice(0, 3);
+
+
+        while (locaisSelecionados.length < 3) {
+          const localExtra = locaisSeguros.find(
+            (local) => !locaisSelecionados.includes(local) && local !== origem && local !== destino
+          );
           if (localExtra) {
             locaisSelecionados.push(localExtra);
           } else {
@@ -56,16 +65,19 @@ const Resultado: React.FC<ResultadoProps> = ({ origem, destino, locaisSeguros, l
 
         let caminhoCompleto: string[] = [origem, ...locaisSelecionados, destino];
 
-        // 🚀 Ajustando locais bloqueados no caminho
-        caminhoCompleto = caminhoCompleto.map(local => {
+  
+        caminhoCompleto = caminhoCompleto.map((local) => {
           if (locaisEmChamas.includes(local)) {
-            setAjusteRota(true); 
-            return locaisSeguros.find(seguro => !locaisEmChamas.includes(seguro)) || local;
+            setAjusteRota(true);
+            const localSeguroAlternativo = locaisSeguros.find(
+              (seguro) => !locaisEmChamas.includes(seguro) && seguro !== origem && seguro !== destino && !caminhoCompleto.includes(seguro)
+            );
+            return localSeguroAlternativo || local;
           }
           return local;
         });
 
-        setCaminho(caminhoCompleto);
+        setCaminho([...new Set(caminhoCompleto)]); 
         setErroAPI(null);
       }
     } catch (error) {
@@ -105,7 +117,7 @@ const Resultado: React.FC<ResultadoProps> = ({ origem, destino, locaisSeguros, l
       )}
 
       <TouchableOpacity style={styles.button} onPress={voltar}>
-        <Text style={styles.buttonText}> Voltar para Simulação</Text>
+        <Text style={styles.buttonText}>⬅️ Voltar para Simulação</Text>
       </TouchableOpacity>
 
       <Image source={require("../assets/Mapa.jpeg")} style={styles.mapa} />
