@@ -1,11 +1,10 @@
 import heapq
 
 def dijkstra(graph, origem, destino, locais_em_chamas):
-
     graph_filtrado = {nó: conexoes for nó, conexoes in graph.items() if nó not in locais_em_chamas}
 
     if origem not in graph_filtrado or destino not in graph_filtrado:
-        return ["Nenhum caminho disponível - O local de partida ou destino não está conectado no grafo!"]
+        return ["❌ Nenhum caminho disponível - O local de partida ou destino está bloqueado!"]
 
     distancias = {nó: float("inf") for nó in graph_filtrado}
     distancias[origem] = 0
@@ -16,8 +15,8 @@ def dijkstra(graph, origem, destino, locais_em_chamas):
     while fila_prioridade:
         distancia_atual, nó_atual = heapq.heappop(fila_prioridade)
 
-        if nó_atual == destino and len(caminhos[nó_atual]) >= 8:
-            return caminhos[nó_atual]
+        if nó_atual == destino:
+            return list(dict.fromkeys(caminhos[nó_atual]))  
 
         for vizinho, peso in graph_filtrado[nó_atual].items():
             nova_distancia = distancia_atual + peso
@@ -27,4 +26,4 @@ def dijkstra(graph, origem, destino, locais_em_chamas):
                 heapq.heappush(fila_prioridade, (nova_distancia, vizinho))
                 caminhos[vizinho] = caminhos[nó_atual] + [vizinho]
 
-    return ["Nenhum caminho disponível - O destino não pode ser alcançado!"]
+    return ["❌ Nenhum caminho disponível - O destino não pode ser alcançado!"]
