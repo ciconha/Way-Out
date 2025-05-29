@@ -1,6 +1,101 @@
+# 🚀 WayOut
 
+**Resumo:** O WayOut é um aplicativo de simulação de Saída em casos de incêndio em shoppings. Utilizando um algoritmo, ele identifica áreas de risco, analisa locais seguros e calcula a rota mais eficiente para o usuário, garantindo uma saída segura.
 
 ---
+
+## 🎯 Objetivo
+
+O WayOut é um aplicativo de evacuação de emergência para incêndios em shoppings, ajudando usuários a encontrar rotas seguras. Ele identifica áreas de perigo e locais seguros, permitindo que o usuário veja o melhor caminho antes de tomar uma decisão. Com base na Teoria dos Grafos, os locais do shopping são representados como pontos conectados, onde as rotas são calculadas usando o algoritmo de Dijkstra, garantindo eficiência e segurança. O sistema evita zonas bloqueadas e otimiza trajetos para uma saída rápida e segura. A motivação do projeto é reduzir pânico e desorientação, tornando a evacuação mais organizada e acessível por meio da tecnologia. O aplicativo processa dados em tempo real, garantindo que as informações sejam sempre atualizadas e confiáveis. Além disso, a interface simples permite que qualquer pessoa use o sistema sem dificuldades.
+
+---
+
+## 👨‍💻 Tecnologias Utilizadas
+
+```
+- Python
+- React
+- Expo
+- Typescript
+- Node.js
+- Express.js
+- API Rest
+- Miro
+- Dijkstra
+
+```
+---
+
+## 🗂️ Estrutura do Projeto
+
+```
+└── 📦 Way-Out
+    ├── 📁 backend
+    │   ├── 🐍 data.py
+    │   ├── 🐍 dijkstra.py
+    │   └── 🐍 server.py
+    ├── 📁 src
+    │   └── 📁 api
+    │       ├── 🔹 apiService.ts
+    │       └── 📁 assets
+    │           ├── 📄 Logo WayOut1.png
+    │           ├── 📄 Mapa.jpeg
+    │           └── 📁 screens
+    │               ├── 🔵 inicio.tsx
+    │               ├── 🔹 iniciostyle.ts
+    │               ├── 🔵 mapa.tsx
+    │               ├── 🔹 mapastyle.ts
+    │               ├── 🔵 Resultado.tsx
+    │               ├── 🔵 simulacao.tsx
+    │               └── 🔹 simulacaostyle.ts
+    ├── 🔵 App.tsx
+    ├── 🔹 Index.ts
+    └── 🔹 style.ts
+
+```
+
+---
+
+## ⚙️ Como Executar
+
+### ✅ Rodando Localmente
+
+1. Clone o repositório:
+
+```
+cd Way-Out-main
+```
+
+2. Configure o servidor e inicie o sistema:
+
+```
+cd "caminho da pasta do backend" 
+ipconfig
+Ira peguar o seu Endereço IPv4 e colocar no link da API | http://IPv4:8000 | Caso queira ver como funciona a API coloque status no link | http://IPv4:8000/status
+python server.py
+coloque o link da API: http://IPv4:8000 nesse arquivos :
+-apiService
+-Resultado.tsx
+-simulacao.tsx
+```
+
+3. Instale as dependências:
+
+```
+npm install
+npm install expo
+```
+
+4. Execute a aplicação:
+
+```
+npx expo start
+```
+
+---
+
+## 📸 Demonstrações
+
 
 <h2 aling= "center"> Tela de Carregamento </h2>
 
@@ -120,3 +215,43 @@
 
 
 
+
+
+---
+
+## 👥 Equipe
+
+| Nome | GitHub |
+|------|--------|
+| Guilherme Ribeiro | [@Guilherme](https://github.com/fulano) |
+| Mariana Freire | [@Mariana](https://github.com/ciclano) |
+
+---
+
+## 🧠 Disciplinas Envolvidas
+
+
+- Teoria dos Grafos
+
+
+---
+
+## 🏫 Informações Acadêmicas
+
+- Universidade: **Universidade Braz Cubas**
+- Curso: **Ciência da Computação 
+- Semestre: 5º 
+- Período: Manhã 
+- Professora orientadora: **Dra. Andréa Ono Sakai**
+- Evento: **Mostra de Tecnologia 1º Semestre de 2025**
+- Local: Laboratório 12
+- Datas: 05 e 06 de junho de 2025
+
+---
+
+## 📄 Licença
+
+MIT License — sinta-se à vontade para utilizar, estudar e adaptar este projeto.
+
+
+---
