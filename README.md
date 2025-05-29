@@ -149,7 +149,7 @@ npx expo start :
       <p>Caso o usuário Digite um local que esteja em Perigo o sistema ira Redirecionar um outro local seguro e proximo aquele que o usuário escolheu</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/9dc270df-c537-4e6a-a38f-f57885dd21b7" alt="Tela de Resultado" width="70%" >
+      <img src="https://github.com/user-attachments/assets/86b55ee8-1e19-437e-b2ea-4dcecf410388" alt="Tela de Resultado" width="70%" >
     </td>
   </tr>
 </table>
