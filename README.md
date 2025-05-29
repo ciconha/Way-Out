@@ -77,7 +77,7 @@ npx expo start :
       <p>A tela de início apresenta os Botões de Simulação de Mapa</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/d2adea84-777f-4735-bd46-413a48829fbc" alt="Tela de Início" width="30%" >
+      <img src="https://github.com/user-attachments/assets/d2df7569-7fda-4623-aa30-e148ba3f14c1" alt="Tela de Início" width="30%" >
     </td>
   </tr>
 </table>
