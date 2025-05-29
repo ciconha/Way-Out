@@ -97,7 +97,7 @@ npx expo start :
       <p>A tela do Mapa onde Todos os Locais do Shopping</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/fa72a5f3-bffa-4dbc-91d2-163ddc7694a1" alt="Tela do Mapa" width="30%" >
+      <img src="https://github.com/user-attachments/assets/94ce3921-f9bb-4e30-af43-69f424448b92" alt="Tela do Mapa" width="30%" >
     </td>
   </tr>
 </table>
