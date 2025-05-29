@@ -143,7 +143,7 @@ npx expo start :
       <p>O resultado que aparece para o usuario quando Digita no input o local de partida e de chegada</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/7ba74a9e-92df-4509-8d7a-cc06831ab52e" width="70%" >
+      <img src="https://github.com/user-attachments/assets/8b6fbd2f-31a5-4899-8403-21432c00876a" width="70%" >
     </td>
          <td style="width: 10%; vertical-align: top;">
       <p>Caso o usuário Digite um local que esteja em Perigo o sistema ira Redirecionar um outro local seguro e proximo aquele que o usuário escolheu</p>
