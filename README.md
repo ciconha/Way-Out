@@ -224,7 +224,7 @@ npx expo start
 | Nome | GitHub |
 |------|--------|
 | Guilherme Ribeiro | [@Guilherme](https://github.com/GuiGui1006) |
-| Mariana Freire | [@Mariana](https://github.com/ciclano) |
+| Mariana Freire | [@Mariana](https://github.com/MarianaswFreire) |
 
 ---
 
