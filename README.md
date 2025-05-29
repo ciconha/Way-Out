@@ -73,7 +73,7 @@ cd "caminho da pasta do backend"
 ipconfig
 Ira peguar o seu Endereço IPv4 e colocar no link da API | http://IPv4:8000 | Caso queira ver como funciona a API coloque status no link | http://IPv4:8000/status
 python server.py
-coloque o link da API: http://IPv4:8000 nesse arquivos :
+coloque o link da API: http://IPv4:8000 nesses arquivos :
 -apiService
 -Resultado.tsx
 -simulacao.tsx
@@ -239,7 +239,7 @@ npx expo start
 ## 🏫 Informações Acadêmicas
 
 - Universidade: **Universidade Braz Cubas**
-- Curso: **Ciência da Computação 
+- Curso: **Ciência da Computação** 
 - Semestre: 5º 
 - Período: Manhã 
 - Professora orientadora: **Dra. Andréa Ono Sakai**
