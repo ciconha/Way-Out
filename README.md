@@ -124,7 +124,7 @@ npx expo start :
      <p> 2 - O local de chegada é onde o usuário pretende chegar.</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/1456971d-c9dd-42fd-9f09-6a5eb1108f02" alt="Tela de Simulação" width="70%" >
+      <img src="https://github.com/user-attachments/assets/24ad4f02-a114-4554-97ba-70afd948c0a6" alt="Tela de Simulação" width="70%" >
     </td>
   </tr>
 </table>
