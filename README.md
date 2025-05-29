@@ -116,7 +116,7 @@ npx expo start :
       <p>Os locais que são gerados automaticamente sendo eles, locais de perigo e seguro</p>
     </td>
     <td style="width: 7%;">
-      <img src="https://github.com/user-attachments/assets/e0a74198-4dd2-4790-9cf7-132931fe39c3" alt="Tela de Simulação" width="70%" >
+      <img src="https://github.com/user-attachments/assets/80433c9b-9bd1-475f-ac02-cec13ac9c973" alt="Tela de Simulação" width="70%" >
     </td>
      <td style="width: 10%; vertical-align: top;">
       <p>Mais para baixo tem 2 inputs, onde o usuário irá análisar o local de partida e chegada.</p>
