@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   safe: { 
     fontSize: 16,
     color: "white",
-    backgroundColor: "#2b2e2e",
+    backgroundColor: "#000000",
     padding: 10,
     borderRadius: 5,
     borderWidth: 0,  
@@ -77,12 +77,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 20,
     borderRadius: 50,
+    
   
   },
   button: {
     backgroundColor: "#2b2e2e",
-    padding: 10,
+    padding: 19,
     borderRadius: 50,
+    marginTop:20
   },
    button1: {
     backgroundColor: "#2b2e2e",
@@ -113,6 +115,12 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#c3d6d6",
     height:1860
+  },
+   scrollContainer1: {
+    flexGrow: 1,
+    padding: 20,
+    backgroundColor: "#c3d6d6",
+    height:1000
   },
 
     input: {
@@ -156,6 +164,71 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     marginTop:30
   },
+    buttonLocal: {
+    backgroundColor: "#2b2e2e",
+    padding: 12,
+    borderRadius: 8,
+    marginVertical: 5,
+    alignItems: "center",
+  },
+  buttonLocalText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  selectionContainer: {
+    backgroundColor: "#EEE",
+    padding: 10,
+    borderRadius: 8,
+    marginVertical: 5,
+    alignItems: "center",
+  },
+  selectedItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#2b2e2e",
+    padding: 10,
+    borderRadius: 8,
+    justifyContent: "space-between",
+  },
+  selectedText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  deleteButton: {
+    backgroundColor: "#2b2e2e",
+    padding: 5,
+    borderRadius: 5,
+  },
+  deleteText: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "bold",
+  
+  },
+  placeholderText: {
+    color: "#888",
+    fontSize: 16,
+  },
+    resultTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#333",
+    textAlign: "center",
+    marginBottom: 10,
+  },
+  resultContainer: {
+    backgroundColor: "#FFF",
+    padding: 15,
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    elevation: 3,
+  },
+
    
   });
   
