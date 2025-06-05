@@ -13,14 +13,25 @@ def normalizar_nome(nome):
     return unicodedata.normalize("NFC", nome)  
 
 class MeuServidor(http.server.SimpleHTTPRequestHandler):
+    def do_OPTIONS(self):
+        """ Tratamento de requisições OPTIONS para evitar bloqueios de CORS """
+        self.send_response(200)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.end_headers()
+
     def do_GET(self):
-        print(f"🔍 Requisição recebida: {self.path}")
+        print(f" Requisição recebida: {self.path}")
+
+        self.send_response(200)
+        self.send_header("Content-type", "application/json")
+        self.send_header("Access-Control-Allow-Origin", "*")  
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.end_headers()
 
         if self.path.strip() == "/":
-            self.send_response(200)
-            self.send_header("Content-type", "application/json")
-            self.send_header("Access-Control-Allow-Origin", "*")
-            self.end_headers()
             self.wfile.write(json.dumps({"mensagem": "⛩️ Caminho tá seguro, Lek"}).encode("utf-8"))
 
         elif self.path.strip() == "/status":
@@ -30,15 +41,19 @@ class MeuServidor(http.server.SimpleHTTPRequestHandler):
             if not locais_seguros:
                 locais_seguros = ["Nenhum local seguro disponível"]
 
-            self.send_response(200)
-            self.send_header("Content-type", "application/json")
-            self.send_header("Access-Control-Allow-Origin", "*")
-            self.end_headers()
             self.wfile.write(json.dumps({
                 "locais_em_chamas": locais_em_chamas,
                 "locais_seguros": locais_seguros,
                 "todos_locais": locais
             }).encode("utf-8"))
+
+        elif self.path.strip() == "/pesos":
+            print(" Debug - Requisição para obter pesos recebida!")
+            if not isinstance(graph, dict) or not graph:
+                self.send_response(500)
+                self.wfile.write(json.dumps({"erro": "O objeto `graph` não está carregado corretamente!"}).encode("utf-8"))
+            else:
+                self.wfile.write(json.dumps({"pesos": graph}, indent=4).encode("utf-8"))
 
         elif self.path.startswith("/caminho-seguro?"):
             try:
@@ -53,21 +68,7 @@ class MeuServidor(http.server.SimpleHTTPRequestHandler):
                 if not origem or not destino:
                     raise ValueError("Erro: Você deve informar um local de partida e um destino válidos!")
 
-                print("🔥 Locais em chamas:", locais_em_chamas)
-
-                if origem in locais_em_chamas or destino in locais_em_chamas:
-                    locais_seguros_disponiveis = [local for local in locais if local not in locais_em_chamas]
-
-                    if not locais_seguros_disponiveis:
-                        raise ValueError("Erro: Todos os destinos possíveis estão bloqueados!")
-
-                    if origem in locais_em_chamas:
-                        origem = min(locais_seguros_disponiveis, key=lambda local: graph.get(local, {}).get(destino, float("inf")))
-                        print(f"⚠️ Origem em chamas! Ajustado para: {origem}")
-
-                    if destino in locais_em_chamas:
-                        destino = min(locais_seguros_disponiveis, key=lambda local: graph.get(origem, {}).get(local, float("inf")))
-                        print(f"⚠️ Destino em chamas! Ajustado para: {destino}")
+                print(" Locais em chamas:", locais_em_chamas)
 
                 grafo_seguro = {local: conexoes for local, conexoes in graph.items() if local not in locais_em_chamas}
                 for local in grafo_seguro:
@@ -78,10 +79,6 @@ class MeuServidor(http.server.SimpleHTTPRequestHandler):
 
                 caminho = dijkstra(grafo_seguro, origem, destino, locais_em_chamas)
 
-                self.send_response(200)
-                self.send_header("Content-type", "application/json")
-                self.send_header("Access-Control-Allow-Origin", "*")
-                self.end_headers()
                 self.wfile.write(json.dumps({
                     "caminho_seguro": caminho,
                     "novo_destino": destino
@@ -89,11 +86,8 @@ class MeuServidor(http.server.SimpleHTTPRequestHandler):
 
             except Exception as e:
                 self.send_response(400)
-                self.send_header("Content-type", "application/json")
-                self.send_header("Access-Control-Allow-Origin", "*")
-                self.end_headers()
                 self.wfile.write(json.dumps({"erro": str(e)}).encode("utf-8"))
 
 with socketserver.TCPServer(("", PORT), MeuServidor) as httpd:
-    print(f"🚀 Servidor rodando na porta {PORT}... Acesse http://192.168.0.108:8000/status")
+    print(f" Servidor rodando na porta {PORT}... Acesse http://192.168.0.100:8000/status")
     httpd.serve_forever()
