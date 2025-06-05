@@ -1,10 +1,10 @@
 import heapq
 
 def dijkstra(graph, origem, destino, locais_em_chamas):
-    graph_filtrado = {nó: conexoes for nó, conexoes in graph.items() if nó not in locais_em_chamas}
+    graph_filtrado = {nó: conexoes for nó, conexoes in graph.items() if nó not in locais_em_chamas}  
 
     if origem not in graph_filtrado or destino not in graph_filtrado:
-        return ["❌ Nenhum caminho disponível - O local de partida ou destino está bloqueado!"]
+        return [" Nenhum caminho disponível - O local de partida ou destino está bloqueado!"]
 
     distancias = {nó: float("inf") for nó in graph_filtrado}
     distancias[origem] = 0
